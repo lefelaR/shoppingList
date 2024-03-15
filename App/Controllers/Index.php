@@ -10,4 +10,17 @@ class Index extends \Core\Controller
     {
         view::render('index/index.php', array(), 'main');
     }
+
+    public function addAction()
+    {
+        view::render('index/add.php', array(), 'main');
+    }
+
+
+    public function save()
+    {
+
+    }
+
+
 }
