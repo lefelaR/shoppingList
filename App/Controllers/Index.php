@@ -37,7 +37,7 @@ class Index extends \Core\Controller
         } catch (\Throwable $th) {
             echo $th->getMessage();
         }
-        redirect('index/index');
+        redirect('/');
     }
 
     public function update()
@@ -48,7 +48,7 @@ class Index extends \Core\Controller
             $id =  ItemsModel::Update($data);
         } catch (\Throwable $th) {
         }
-        redirect('index/index');
+        redirect('/');
     }
 
     public function delete()
@@ -59,6 +59,6 @@ class Index extends \Core\Controller
         } catch (\Throwable $th) {
             echo $th->getMessage();
         }
-        redirect('index/index');
+        redirect('/');
     }
 }
