@@ -1,3 +1,17 @@
+
+-- local config
+    -- const DB_HOST = 'localhost';
+    -- const DB_NAME = 'if0_36166217_xxx';
+    -- const DB_USER = 'root';
+    -- const DB_PSSD = '';
+
+-- server config
+
+    -- const DB_HOST = 'sql101.infinityfree.com';
+    -- const DB_NAME = 'if0_36166217_xxx';
+    -- const DB_USER = 'if0_36166217';
+    -- const DB_PSSD = 'APQ9Qdnd4CTLI';
+
 CREATE TABLE `items` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
