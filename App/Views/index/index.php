@@ -1,3 +1,11 @@
+<?php
+
+global $context;
+$items = $context->data;
+
+?>
+
+
 <section id="heading">
     <div class="container-fluid">
         <div class="row">
@@ -28,23 +36,28 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td colspan="2">Larry the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
+
+                            <?php
+                            foreach ($items as $key => $item) 
+                            {   
+                                $key++;
+                                echo    '<tr>
+                                        <th scope="row">'.$key.'</th>
+                                        <td>
+                                            '.$item['name'].'</td>
+                                        <td>
+                                            '.$item['quantity'].'
+                                        </td>
+                                        <td> 
+                                            <a class="btn btn-sm btn-success" href="add?id=' .  $item['id'] . '">
+                                            Edit
+                                            </a>
+                                            <a class="btn btn-sm btn-danger" href="delete?id=' .  $item['id'] . '"">
+                                            Delete
+                                        </td>
+                                        </tr>';
+                            }
+                            ?>
                             </tbody>
                         </table>
                     </div>
