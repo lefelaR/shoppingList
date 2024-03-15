@@ -52,10 +52,10 @@ $items = $context->data;
                                             ' . $item['quantity'] . '
                                         </td>
                                         <td> 
-                                            <a class="btn btn-sm btn-success" href="add?id=' .  $item['id'] . '">
+                                            <a class="btn btn-sm btn-success" href="index/add?id=' .  $item['id'] . '">
                                             Edit
                                             </a>
-                                            <a class="btn btn-sm btn-danger" href="delete?id=' .  $item['id'] . '"">
+                                            <a class="btn btn-sm btn-danger" href="index/delete?id=' .  $item['id'] . '"">
                                             Delete
                                         </td>
                                         </tr>';
