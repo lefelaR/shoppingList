@@ -11,13 +11,19 @@ class Index extends \Core\Controller
     public function indexAction()
     {
         $items = ItemsModel::Get();
-        
+
         view::render('index/index.php', $items, 'main');
     }
 
     public function addAction()
     {
-        view::render('index/add.php', array(), 'main');
+        $data = $_GET;
+        if (isset($data['id'])) {
+            $id = $data['id'];
+            $item = ItemsModel::GetById($id);
+        } else
+            $item = array();
+        view::render('index/add.php', $item, 'main');
     }
 
 
