@@ -9,6 +9,7 @@
 
 <body>
     <main>
+   <?php include '../public/includes/navbar.php' ?>
 
         {{content}}
 

@@ -13,7 +13,7 @@ public $dir  =  '';
     {
         $this->root =   $_SERVER['HTTP_HOST'];
         $this->host =   'http://'.$this->root;
-        $this->dir  =   $this->host.'';
+        $this->dir  =   $this->host.'/shoppingList/';
     }
 
 }
