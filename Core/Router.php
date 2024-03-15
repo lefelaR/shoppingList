@@ -24,7 +24,6 @@ class Router
             $controller = $this->params['controller'];
             $controller = $this->convertToStudlyCaps($controller);
             $controller = $this->getNamespace() . $controller;
-
             if (class_exists($controller)) 
             {
                 $controller_object = new $controller($this->params);
@@ -64,7 +63,6 @@ class Router
         return $url;
     }
 
-
     public function match($url)
     {
         foreach ($this->routes as $route => $params) 
@@ -90,7 +88,6 @@ class Router
         return str_replace(' ', '', ucwords(str_replace('-', ' ', $string)));
     }
 
-
     protected function getNamespace()
     {
         $namespace = 'App\Controllers\\';
@@ -105,5 +102,4 @@ class Router
     {
         return lcfirst($this->convertToStudlyCaps($string));
     }
-
 }
