@@ -5,7 +5,6 @@ function buildurl($string)
     global $context;
     return $context->siteroot . $string;
 }
-
 function redirect($url)
 {
     if (isset($url)) {

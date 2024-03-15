@@ -1,5 +1,6 @@
 <?php
 namespace Core;
+include_once '../Components/Helpers.php';
 class Router
 {
 

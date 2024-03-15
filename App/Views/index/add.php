@@ -34,7 +34,8 @@ $quantity = (isset($items['quantity'])) ? $items['quantity'] : '';
                 <div class="card">
                     <div class="card-body">
 
-                        <form class="form" action="'.$action.'" method="post">
+                        <form class="form" action="<?php echo $action; ?>" method="post">
+                            <input type="hidden"  id="id" name="id" value="<?php echo $id ;?>" >
                             <div class="mb-3">
                                 <label for="name" class="form-label">Item name</label>
                                 <input type="name" name="name" class="form-control" id="name" value="<?php echo $name ;?>"> 

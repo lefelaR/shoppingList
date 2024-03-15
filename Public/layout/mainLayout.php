@@ -1,3 +1,6 @@
+<?php 
+include_once '../Components/Helpers.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -20,6 +20,11 @@ $items = $context->data;
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <div class="card-header">
+                    <a class="btn btn-sm btn-light-secondary" href="<?php echo buildurl('index/add');?>">
+                       + Add
+                    </a>
+                </div>
                 <div class="card">
 
 

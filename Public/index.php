@@ -19,4 +19,10 @@ $router->add('{controller}/{action}');
 
 $url = $_SERVER['QUERY_STRING'];
 
+global $context;
+if (!isset($context) && empty($context)) {    // call the class
+    $context = new Context('', '', '', '');
+}
+
+
 $router->dispatch($url);

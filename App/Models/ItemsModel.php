@@ -51,7 +51,7 @@ class ItemsModel extends \Core\Model
     {
         try {
             $db = static::getDB();
-            $sql = "UPDATE items SET `name` =  '$data[name]', `quantity` = '$data[quantity]', `updatedAt`= '$data[updatedAt]', `status`= '$data[status]',
+            $sql = "UPDATE items SET `name` =  '$data[name]', `quantity` = '$data[quantity]', `updatedAt`= '$data[updatedAt]'
         WHERE `id`= $data[id]";
             $item_id = $db->exec($sql);
             return $item_id;

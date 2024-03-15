@@ -11,7 +11,6 @@ class Index extends \Core\Controller
     public function indexAction()
     {
         $items = ItemsModel::Get();
-
         view::render('index/index.php', $items, 'main');
     }
 
@@ -27,10 +26,38 @@ class Index extends \Core\Controller
     }
 
 
-    public function save()
+    public function save($data)
     {
-
+        if (isset($_POST)) $data = $_POST;
+        $data['createdAt'] = date("Y-m-d H:i:s");
+        $data['status'] = 1;
+        try {
+            $id =  ItemsModel::Save($data);
+        } catch (\Throwable $th) {
+            echo $th->getMessage();
+        }
+        redirect('index/index');
     }
 
+    public function update()
+    {
+        $data = $_POST;
+        $data['updatedAt'] = date("Y-m-d H:i:s");
+        try {
+            $id =  ItemsModel::Update($data);
+        } catch (\Throwable $th) {
+        }
+        redirect('index/index');
+    }
 
+    public function delete()
+    {
+        $id = $_GET['id'];
+        try {
+            ItemsModel::Delete($id);
+        } catch (\Throwable $th) {
+            echo $th->getMessage();
+        }
+        redirect('index/index');
+    }
 }
