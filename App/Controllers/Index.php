@@ -3,12 +3,16 @@
 namespace App\Controllers;
 
 use \Core\View;
+use App\Models\ItemsModel;
+
 class Index extends \Core\Controller
 {
 
     public function indexAction()
     {
-        view::render('index/index.php', array(), 'main');
+        $items = ItemsModel::Get();
+        
+        view::render('index/index.php', $items, 'main');
     }
 
     public function addAction()

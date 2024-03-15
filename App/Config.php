@@ -4,8 +4,8 @@ namespace App;
 
 class Config
 {
-    const DB_HOST = '';
-    const DB_NAME = '';
-    const DB_USER = '';
+    const DB_HOST = 'localhost';
+    const DB_NAME = 'if0_36166217_xxx';
+    const DB_USER = 'root';
     const DB_PSSD = '';
 }

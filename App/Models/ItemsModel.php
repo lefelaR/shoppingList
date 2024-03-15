@@ -13,6 +13,7 @@ class ItemsModel extends \Core\Model
             $db = static::getDB();
             $stmt = $db->query('SELECT * FROM items ORDER BY createdAt');
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
         } catch (PDOException $e) {
             throw new PDOException($e->getMessage());
         }
