@@ -20,16 +20,15 @@ $items = $context->data;
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="card-header">
-                    <a class="btn btn-sm btn-light-secondary" href="<?php echo buildurl('index/add');?>">
-                       + Add
-                    </a>
-                </div>
+
                 <div class="card">
+                    <div class="card-header">
 
+                        <a class="btn btn-sm btn-secondary float-end" href="<?php echo buildurl('index/add'); ?>">
+                            + Add
+                        </a>
 
-
-
+                    </div>
                     <div class="card-body">
                         <table class="table">
                             <thead>
@@ -42,16 +41,15 @@ $items = $context->data;
                             </thead>
                             <tbody>
 
-                            <?php
-                            foreach ($items as $key => $item) 
-                            {   
-                                $key++;
-                                echo    '<tr>
-                                        <th scope="row">'.$key.'</th>
+                                <?php
+                                foreach ($items as $key => $item) {
+                                    $key++;
+                                    echo    '<tr>
+                                        <th scope="row">' . $key . '</th>
                                         <td>
-                                            '.$item['name'].'</td>
+                                            ' . $item['name'] . '</td>
                                         <td>
-                                            '.$item['quantity'].'
+                                            ' . $item['quantity'] . '
                                         </td>
                                         <td> 
                                             <a class="btn btn-sm btn-success" href="add?id=' .  $item['id'] . '">
@@ -61,8 +59,8 @@ $items = $context->data;
                                             Delete
                                         </td>
                                         </tr>';
-                            }
-                            ?>
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>

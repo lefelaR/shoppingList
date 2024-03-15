@@ -26,9 +26,10 @@ class Index extends \Core\Controller
     }
 
 
-    public function save($data)
+    public function save()
     {
         if (isset($_POST)) $data = $_POST;
+
         $data['createdAt'] = date("Y-m-d H:i:s");
         $data['status'] = 1;
         try {
