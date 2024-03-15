@@ -31,7 +31,7 @@ class Index extends \Core\Controller
         if (isset($_POST)) $data = $_POST;
 
         $data['createdAt'] = date("Y-m-d H:i:s");
-        $data['status'] = 1;
+        $data['status'] = 0;
         try {
             $id =  ItemsModel::Save($data);
         } catch (\Throwable $th) {
@@ -46,6 +46,28 @@ class Index extends \Core\Controller
         $data['updatedAt'] = date("Y-m-d H:i:s");
         try {
             $id =  ItemsModel::Update($data);
+        } catch (\Throwable $th) {
+        }
+        redirect('/');
+    }
+
+    public function updatestatus()
+    {
+       
+        $data = $_POST;
+
+        
+    $check = [
+        'false' => '0',
+        'true' => '1' 
+    ];
+
+    
+
+        $data['updatedAt'] = date("Y-m-d H:i:s");
+        $data['status'] = $check[$data['status']];
+         try {
+            $id =  ItemsModel::UpdateStatus($data);
         } catch (\Throwable $th) {
         }
         redirect('/');

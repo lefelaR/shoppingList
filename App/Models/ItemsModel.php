@@ -60,6 +60,20 @@ class ItemsModel extends \Core\Model
         }
     }
 
+    public static function UpdateStatus($data)
+    {
+        try {
+       
+            $db = static::getDB();
+            $sql = "UPDATE items SET `status` =  '$data[status]', `updatedAt`= '$data[updatedAt]'
+            WHERE `id`= $data[id]";
+                $item_id = $db->exec($sql);
+                return $item_id;
+
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
     public static function Delete($id)
     {
         try {

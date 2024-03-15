@@ -40,11 +40,15 @@ $items = $context->data;
                                 </tr>
                             </thead>
                             <tbody>
-
                                 <?php
                                 foreach ($items as $key => $item) {
                                     $key++;
-                                    echo    '<tr>
+                                    if(isset($item['status']))
+                                    {
+                                        if($item['status'] == 1) $style = 'table-secondary';
+                                        else $style = 'table-light';
+                                    }
+                                    echo    '<tr class="'.$style.'">
                                         <th scope="row">' . $key . '</th>
                                         <td>
                                             ' . $item['name'] . '</td>
@@ -57,7 +61,13 @@ $items = $context->data;
                                             </a>
                                             <a class="btn btn-sm btn-danger" href="index/delete?id=' .  $item['id'] . '"">
                                             Delete
-                                        </td>
+                                            </a>
+                                            <span class="form-switch">
+                                            
+                                            ';
+                                            $checked = $item['status'] == 1 ? "checked" : "";
+                                            echo '<input class="form-check-input" type="checkbox" onclick="handleToggle(event)" data_id="' . $item['status'] . '" name="switch" id="' . $item['id'] . '" ' . $checked . '></span>';
+                                       echo '</td>
                                         </tr>';
                                 }
                                 ?>
@@ -69,3 +79,26 @@ $items = $context->data;
         </div>
     </div>
 </section>
+
+<script>
+const handleToggle = (event) =>{
+    var itemCheck = event.target
+        var checked = itemCheck.checked;
+        var itemId = itemCheck.id;
+        const formData = new FormData();
+        formData.append("status", checked);
+        formData.append("id", itemId);
+        const currentURL = window.location.href;
+        const stripped = currentURL.substring(0, currentURL.lastIndexOf("/"));
+        fetch(stripped +'/index/'+ 'updatestatus', {
+            method: "post",
+            body: formData,
+          })
+          .then((response) => {
+            location.reload()
+          })
+          .catch((err) => {
+            console.log(err)
+          });
+      }
+</script>
