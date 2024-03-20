@@ -11,7 +11,7 @@ jobs:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: ftpupload.net
-          username: ${{ secrets.ftp_username }}
-          password: ${{ secrets.ftp_password }}
+          server: 185.27.134.165
+          username: if0_36168203
+          password: kJwrNbPKFQ
           server-dir: /home/vol8_1/infinityfree.com/if0_36168203/
