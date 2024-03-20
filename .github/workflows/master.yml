@@ -11,7 +11,7 @@ jobs:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: 185.27.134.165
+          server: http://raccoonshoplist.free.nf/
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
           server-dir: /home/vol8_1/infinityfree.com/if0_36168203/
